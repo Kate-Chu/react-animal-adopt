@@ -25,6 +25,9 @@
 }
 
 .card:hover {
+  transform: translateY(-8px);
+  opacity: 1;
+  box-shadow: 0 1.5rem 4rem rgba(244, 191, 107, 0.8);
   transition: all 0.2s;
 }
 
@@ -36,7 +39,7 @@
   margin: -8rem 10rem;
 }
 .section-features__btn:hover {
-  transition: all 0.2s ease 0s;
+  transform: translateY(-8px);
 }
 
 .section-features .btn-text {
