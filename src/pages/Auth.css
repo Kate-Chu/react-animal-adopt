@@ -1,0 +1,23 @@
+.auth-section {
+  background-color: rgb(161, 99, 19);
+  color: white;
+  font-size: 1.6rem;
+  margin: auto auto;
+  width: 50rem;
+}
+
+.btn-toggleMode {
+  padding: 12px;
+  color: #fff;
+}
+
+.btn-toggleMode:hover {
+  border-color: rgb(161, 99, 19);
+  color: rgb(224, 188, 140);
+}
+
+.btn-submit {
+  background-color: #fff;
+  color: rgb(161, 99, 19);
+  font-size: 1.6rem;
+}
