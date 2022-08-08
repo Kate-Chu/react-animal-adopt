@@ -1,0 +1,66 @@
+.about-section {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-section__text .btn-text {
+  margin-top: 10px;
+  font-size: 1.6rem;
+  color: #c58b44;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #c58b44;
+  padding: 8px 16px;
+  transition: all 0.2s;
+}
+
+.about-section__text .btn-text:hover {
+  background-color: #c58b44;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  box-shadow: 0 1rem 2rem rgb(0 0 0 / 15%);
+  transform: translateY(-2px);
+}
+
+.composition {
+  position: relative;
+}
+
+.composition img {
+  width: 15rem;
+}
+
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 40%);
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  transition: all 0.2s;
+  outline-offset: 2rem;
+}
+
+.composition__photo:hover {
+  transform: scale(1.05) translateY(-0.5rem);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 2.5rem 4rem;
+  z-index: 20;
+  outline: #c58b44 solid 1.5rem;
+}
+
+.composition__photo--p1 {
+  left: 0;
+  top: -2rem;
+}
+
+.composition__photo--p2 {
+  right: 0;
+  top: 2rem;
+}
+
+.composition__photo--p3 {
+  left: 20%;
+  top: 10rem;
+}

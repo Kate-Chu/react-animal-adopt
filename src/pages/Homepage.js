@@ -1,5 +1,15 @@
+import MainImage from "../component/Homepage/MainImage";
+import About from "../component/Homepage/About";
+import Features from "../component/Homepage/Features";
+
 const Homepage = () => {
-  return <h1>Homepage</h1>;
+  return (
+    <>
+      <MainImage />
+      <About />
+      <Features />
+    </>
+  );
 };
 
 export default Homepage;

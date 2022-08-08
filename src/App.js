@@ -1,13 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+
 import Header from "./component/Layouts/Header";
 import AnimalData from "./pages/AnimalData";
 import Animals from "./pages/Animals";
 import Homepage from "./pages/Homepage";
 import Favorites from "./pages/Favorites";
 import Auth from "./pages/Auth";
+import Footer from "./component/Layouts/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/*" element={<Homepage />}></Route>
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
