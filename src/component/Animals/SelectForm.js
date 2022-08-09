@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import "./SelectForm.css";
 
 const SelectForm = () => {
@@ -32,7 +32,11 @@ const SelectForm = () => {
       <select className="form-select" aria-label="Default select example">
         <option>地區</option>
         {cities.map((city) => {
-          return <option value={city}>{city}</option>;
+          return (
+            <option key={city} value={city}>
+              {city}
+            </option>
+          );
         })}
       </select>
     </form>
