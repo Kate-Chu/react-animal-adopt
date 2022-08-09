@@ -3,7 +3,7 @@ import "./SearchForm.css";
 
 const SearchForm = () => {
   return (
-    <form className="d-flex">
+    <form className="d-flex m-sm-3">
       <input
         className="form-control me-2"
         type="search"

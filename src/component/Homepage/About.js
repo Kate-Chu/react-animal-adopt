@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 import "./About.css";
@@ -10,7 +10,7 @@ const About = () => {
   return (
     <section className="about-section">
       <div className="row w-75">
-        <div className="col-6 about-section__text">
+        <div className="col-md-6 about-section__text">
           <h2 className="my-5">為你尋找最適合的牠</h2>
           <h3 className="heading-tertiary u-margin-bottom-small">
             24 小時線上查看
@@ -30,7 +30,7 @@ const About = () => {
             Learn more &rarr;
           </NavLink>
         </div>
-        <div className="col-6">
+        <div className="col-md-6">
           <div className="composition">
             <img
               src={dogsImg}

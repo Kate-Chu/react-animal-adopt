@@ -3,6 +3,7 @@
 }
 
 .card:hover {
+  cursor: pointer;
   transform: translateY(-8px);
   opacity: 1;
   box-shadow: 0 0.5rem 1rem #ddd;

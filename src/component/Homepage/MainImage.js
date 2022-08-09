@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 import classes from "./MainImage.module.css";
 
-import dogsImg from "../../assets/dogs.jpeg";
+import dogsImg from "../../assets/dogs-small.jpg";
 
 const MainImage = () => {
   return (

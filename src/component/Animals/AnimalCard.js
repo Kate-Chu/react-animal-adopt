@@ -3,15 +3,15 @@ import React from "react";
 import dummyData from "../../data/dummyData.json";
 import "./AnimalCard.css";
 
-const AnimalsCard = (props) => {
-  const { start, end } = props;
+const AnimalCard = (props) => {
+  const { start, end, handleShowModal } = props;
   const startNumber = parseInt(start);
   const endNumber = parseInt(end);
 
   let data = dummyData.slice(startNumber, endNumber).map((item) => {
     return (
-      <div className="col-2" key={item.animal_id}>
-        <div className="card">
+      <div className="col-10 col-md-4 col-lg-2" key={item.animal_id}>
+        <div className="card" onClick={() => handleShowModal(item.animal_id)}>
           <img
             src={item.album_file}
             className="card-img-top card-img"
@@ -29,4 +29,4 @@ const AnimalsCard = (props) => {
   return data;
 };
 
-export default React.memo(AnimalsCard);
+export default React.memo(AnimalCard);

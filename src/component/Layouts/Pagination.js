@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Pagination = () => {
   return (
     <nav aria-label="Page navigation page-nav">
-      <ul class="pagination">
+      <ul className="pagination">
         <li className="page-item">
           <a className="page-link" href="#">
             1

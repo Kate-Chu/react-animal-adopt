@@ -19,3 +19,30 @@
   gap: 5rem;
   margin-top: -10rem;
 }
+
+.section-features__btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.section-features__btn .btn-text {
+  transform: skewY(7deg);
+  margin-top: 10px;
+  font-size: 1.6rem;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #c58b44;
+  padding: 8px 16px;
+  transition: all 0.2s;
+}
+
+.section-features__btn .btn-text:hover {
+  transform: skewY(7deg) translateY(-2px);
+  background-color: #c58b44;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  box-shadow: 0 1rem 2rem rgb(0 0 0 / 15%);
+}
