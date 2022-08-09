@@ -1,3 +1,4 @@
+import React from "react"
 import ReactDOM from "react-dom";
 
 const Backdrop = (props) => {
@@ -29,4 +30,4 @@ const Modal = (props) => {
   );
 };
 
-export default Modal;
+export default React.memo(Modal);

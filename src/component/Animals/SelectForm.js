@@ -1,3 +1,4 @@
+import React from "react"
 import "./SelectForm.css";
 
 const SelectForm = () => {
@@ -38,4 +39,4 @@ const SelectForm = () => {
   );
 };
 
-export default SelectForm;
+export default React.memo(SelectForm);

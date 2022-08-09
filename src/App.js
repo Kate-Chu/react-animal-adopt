@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import Header from "./component/Layouts/Header";
 import AnimalData from "./pages/AnimalData";
 import Animals from "./pages/Animals";

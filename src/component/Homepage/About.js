@@ -1,3 +1,4 @@
+import React from "react"
 import { NavLink } from "react-router-dom";
 
 import "./About.css";
@@ -53,4 +54,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default React.memo(About);

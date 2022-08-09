@@ -1,3 +1,5 @@
+import React from "react";
+
 import dummyData from "../../data/dummyData.json";
 import "./AnimalCard.css";
 
@@ -27,4 +29,4 @@ const AnimalsCard = (props) => {
   return data;
 };
 
-export default AnimalsCard;
+export default React.memo(AnimalsCard);

@@ -1,3 +1,4 @@
+import React from "react";
 import "./SearchForm.css";
 
 const SearchForm = () => {
@@ -16,4 +17,4 @@ const SearchForm = () => {
   );
 };
 
-export default SearchForm;
+export default React.memo(SearchForm);

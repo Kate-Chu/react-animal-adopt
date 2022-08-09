@@ -1,3 +1,4 @@
+import React from "react"
 import Modal from "../UI/Modal";
 import AnimalsCard from "./AnimalCard";
 
@@ -9,4 +10,4 @@ const ShowAnimal = (props) => {
   );
 };
 
-export default ShowAnimal;
+export default React.memo(ShowAnimal);

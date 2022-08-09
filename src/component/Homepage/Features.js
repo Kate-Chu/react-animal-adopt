@@ -1,3 +1,4 @@
+import React from "react"
 import "./Features.css";
 import AnimalsCard from "../Animals/AnimalCard";
 
@@ -12,4 +13,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default React.memo(Features);

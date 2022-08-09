@@ -1,3 +1,4 @@
+import React from "react"
 import classes from "./MainImage.module.css";
 
 import dogsImg from "../../assets/dogs.jpeg";
@@ -10,4 +11,4 @@ const MainImage = () => {
   );
 };
 
-export default MainImage;
+export default React.memo(MainImage);
