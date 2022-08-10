@@ -1,11 +1,10 @@
 import "./Animals.css";
 import SelectForm from "../component/Animals/SelectForm";
 import SearchForm from "../component/Animals/SearchForm";
-import Pagination from "../component/Layouts/Pagination";
+import PaginationRender from "../component/Layouts/Pagination";
 import AnimalCard from "../component/Animals/AnimalCard";
 
-const Animals = (props) => {
-  const { handleShowModal } = props;
+const Animals = () => {
 
   return (
     <>
@@ -19,10 +18,10 @@ const Animals = (props) => {
           </div>
         </section>
         <section className="animal-cards-section d-flex flex-wrap justify-content-center my-5">
-          <AnimalCard start="0" end="20" handleShowModal={handleShowModal} />
+          <AnimalCard  />
         </section>
         <section className="pagination-section d-flex justify-content-center my-5">
-          <Pagination />
+          <PaginationRender />
         </section>
       </section>
     </>

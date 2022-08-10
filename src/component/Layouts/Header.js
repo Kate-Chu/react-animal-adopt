@@ -27,24 +27,19 @@ const Header = React.memo(() => {
             <NavLink to="/animals/favorites">我的最愛</NavLink>
           </li>
         </ul>
-        <ul>
-          {!isLoggedIn ? (
-            <>
-              <li>
-                <NavLink to="/auth">Signin</NavLink>
-              </li>
-              <li>
-                <NavLink to="/auth">Signup</NavLink>
-              </li>
-            </>
-          ) : (
-            <>
-              <li>
-                <button onClick={logoutHandler}>Logout</button>
-              </li>
-            </>
-          )}
-        </ul>
+        {!isLoggedIn ? (
+          <ul>
+            <li>
+              <NavLink to="/auth">Signin</NavLink>
+            </li>
+          </ul>
+        ) : (
+          <ul>
+            <li>
+              <button onClick={logoutHandler}>Logout</button>
+            </li>
+          </ul>
+        )}
       </nav>
     </header>
   );

@@ -2,3 +2,28 @@
   display: flex;
   justify-content: center;
 }
+
+.pagination > li > a {
+  background-color: white;
+  color: #9e6623;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: #9e6623;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination > .active > span {
+  color: white;
+  background-color: #9e6623 !important;
+  border: solid 1px #9e6623 !important;
+}
+
+.pagination > .active > a:hover {
+  background-color: #9e6623 !important;
+  border: solid 1px #9e6623;
+}
