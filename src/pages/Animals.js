@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import HeartSpinner from "../component/UI/Spinner";
+import BallTriangleSpinner from "../component/UI/Spinner";
 import "./Animals.css";
 import SelectForm from "../component/Animals/SelectForm";
 import SearchForm from "../component/Animals/SearchForm";
@@ -14,10 +14,10 @@ const Animals = () => {
       <section className="container animals-section">
         {isLoading && (
           <div className="d-flex align-items-center flex-column h-100">
-            <h1 className="waiting-words mt-5 pt-5 text-secondary">
-              努力加載中，就快好了...
+            <h1 className="waiting-words my-5 py-5 text-secondary">
+              努力加載中，馬上就好了...
             </h1>
-            <HeartSpinner />
+            <BallTriangleSpinner />
           </div>
         )}
         {!isLoading && (

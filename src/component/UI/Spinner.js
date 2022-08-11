@@ -1,12 +1,12 @@
-import { Hearts } from "react-loader-spinner";
+import { Grid } from "react-loader-spinner";
 
-const HeartSpinner = () => {
+const Spinner = () => {
   return (
-    <Hearts
-      height="500"
-      width="500"
-      radius="9"
-      color="pink"
+    <Grid
+      height="200"
+      width="200"
+      radius="10"
+      color="#e29d49"
       ariaLabel="three-dots-loading"
       wrapperStyle
       wrapperClass
@@ -14,4 +14,4 @@ const HeartSpinner = () => {
   );
 };
 
-export default HeartSpinner;
+export default Spinner;

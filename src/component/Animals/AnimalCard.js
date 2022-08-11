@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 import homepageCards from "../../data/homepageCards.json";
 import { fetchAnimalData } from "../../store/animalSlice";
 import { modalActions } from "../../store/modalSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./AnimalCard.css";
 import catImage from "../../assets/cats-small.jpg";
 import dogImage from "../../assets/dogs-small.jpg";
@@ -51,6 +53,9 @@ const AnimalCard = () => {
       image = item.album_file;
     }
 
+    const isFavorite =
+      stateFavoriteData.indexOf(item.animal_id) !== -1 ? true : false;
+
     return (
       <div className="col-10 col-md-4 col-lg-2" key={item.animal_id}>
         <div
@@ -59,7 +64,10 @@ const AnimalCard = () => {
         >
           <img src={image} className="card-img-top card-img" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">{item.animal_Variety}</h5>
+            <div className="d-flex justify-content-between">
+              <h5 className="card-title">{item.animal_Variety}</h5>
+              <FontAwesomeIcon icon={faHeart} color={isFavorite ? "red" : ""} />
+            </div>
             <p className="card-text">{item.animal_place}</p>
           </div>
         </div>
