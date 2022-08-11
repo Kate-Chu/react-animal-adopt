@@ -1,5 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
-import dummyData from "../data/dummyData.json";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+const OFFICIAL_URL =
+  "https://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL";
+
+export const fetchAnimalData = createAsyncThunk(
+  "animal_slice/fetchData",
+  async (_, thunkAPI) => {
+    try {
+      const response = await fetch(OFFICIAL_URL);
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue("抱歉，目前無法取得資料，請稍後再試");
+    }
+  }
+);
 
 const animalSlice = createSlice({
   name: "animal_slice",
@@ -8,34 +23,10 @@ const animalSlice = createSlice({
     length: 0,
     showData: [],
     currentPage: 1,
+    isLoading: false,
   },
 
   reducers: {
-    receiveDefaultData(state) {
-      // let animalData = localStorage.getItem("animal_data") || [];
-
-      // if (animalData.length === 0) {
-      //   fetch(
-      //     "https://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL"
-      //   )
-      //     .then((res) => {
-      //       return res.json();
-      //     })
-      //     .then((data) => {
-      //       console.log(data);
-      //       localStorage.setItem("default_data", JSON.stringify(dummyData));
-      //       state.data = dummyData;
-      //       state.length = dummyData.length;
-      //       state.showData = dummyData.slice(0, 15);
-      //     });
-      // }
-
-      localStorage.setItem("default_data", JSON.stringify(dummyData));
-      state.data = dummyData;
-      state.length = dummyData.length;
-      state.showData = dummyData.slice(0, 15);
-    },
-
     changeShowDataByPage(state, action) {
       const start = action.payload * 15 - 15;
       const end = action.payload * 15;
@@ -44,33 +35,56 @@ const animalSlice = createSlice({
     },
 
     search(state, action) {
-      const defaultData = JSON.parse(localStorage.getItem("default_data"));
+      const storedData = JSON.parse(localStorage.getItem("animal_data"));
       const searchBy = action.payload.searchBy;
       let foundItems = [];
       const searchVariety = action.payload.searchVariety;
 
       if (searchBy === "kind") {
-        const foundKindItems = defaultData.filter(
+        const foundKindItems = storedData.filter(
           (item) => item.animal_kind === searchVariety
         );
-        const foundVarietyItems = defaultData.filter((item) =>
+        const foundVarietyItems = storedData.filter((item) =>
           item.animal_Variety.includes(searchVariety)
         );
         foundItems = foundKindItems.concat(foundVarietyItems);
       }
 
       if (searchBy === "city") {
-        foundItems = defaultData.filter((item) =>
-          item.animal_place.includes(searchVariety)
-        );
+        foundItems =
+          searchVariety === "all"
+            ? storedData
+            : storedData.filter((item) =>
+                item.animal_place.includes(searchVariety)
+              );
       }
 
       if (foundItems.length === 0) {
         alert("沒有找到相關資料");
+        foundItems = state.data;
       }
       state.data = foundItems;
       state.length = foundItems.length;
       state.showData = foundItems.slice(0, 15);
+    },
+  },
+
+  extraReducers: {
+    [fetchAnimalData.fulfilled]: (state, action) => {
+      const animalData = action.payload;
+      localStorage.setItem("animal_data", JSON.stringify(animalData));
+      state.isLoading = false;
+      state.data = animalData;
+      state.length = animalData.length;
+      state.showData = animalData.slice(0, 15);
+    },
+
+    [fetchAnimalData.pending]: (state, action) => {
+      state.isLoading = true;
+    },
+
+    [fetchAnimalData.rejected]: (state, action) => {
+      state.isLoading = false;
     },
   },
 });

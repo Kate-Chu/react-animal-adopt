@@ -1,16 +1,21 @@
 import React, { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../store/AuthContext";
 import classes from "./Header.module.css";
 
 const Header = React.memo(() => {
   const navigation = useNavigate();
+  const location = useLocation;
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
 
   const logoutHandler = () => {
     authCtx.logoutHandler();
     navigation("/", { replace: true });
+  };
+
+  const reloadHandler = () => {
+    location.reload();
   };
 
   return (
@@ -21,7 +26,9 @@ const Header = React.memo(() => {
       <nav className={classes.navbar}>
         <ul>
           <li>
-            <NavLink to="/animals">所有動物</NavLink>
+            <NavLink to="/animals" onClick={reloadHandler}>
+              所有動物
+            </NavLink>
           </li>
           <li>
             <NavLink to="/animals/favorites">我的最愛</NavLink>

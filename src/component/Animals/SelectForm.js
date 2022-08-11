@@ -36,7 +36,8 @@ const SelectForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    const inputValue = event.target.value;
+    let inputValue = event.target.value;
+    inputValue = inputValue === "地區" ? "all" : inputValue;
 
     dispatch(
       animalActions.search({

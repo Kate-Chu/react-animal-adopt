@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import homepageCards from "../../data/homepageCards.json";
-import { animalActions } from "../../store/animalSlice";
+import { fetchAnimalData } from "../../store/animalSlice";
 import { modalActions } from "../../store/modalSlice";
 import "./AnimalCard.css";
 import catImage from "../../assets/cats-small.jpg";
@@ -14,7 +14,7 @@ const AnimalCard = () => {
   const stateData = useSelector((state) => state.animal.data);
 
   if (stateData.length === 0) {
-    dispatch(animalActions.receiveDefaultData());
+    dispatch(fetchAnimalData());
   }
 
   const stateShowData = useSelector((state) => state.animal.showData);

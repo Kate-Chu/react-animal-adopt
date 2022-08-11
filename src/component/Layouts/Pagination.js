@@ -12,7 +12,7 @@ const PaginationRender = () => {
   const currentPage = useSelector((state) => state.animal.currentPage);
 
   const endPage = Math.ceil(stateAnimalLength / 15);
-  const start = currentPage < 4 ? 1 : currentPage - 4;
+  const start = currentPage < 5 ? 1 : currentPage - 4;
   const end = currentPage + 4 > endPage ? endPage : currentPage + 4;
 
   let active = currentPage;
