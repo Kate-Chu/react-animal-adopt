@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Modal, Button, Row, Col, Container } from "react-bootstrap";
 import { modalActions } from "../../store/modalSlice";
+import { addFavoriteItem, removeFavoriteItem } from "../../store/favoriteSlice";
+import AuthContext from "../../store/AuthContext";
 
 const ShowAnimal = () => {
   const isShow = useSelector((state) => state.modal.isShow);
   const data = useSelector((state) => state.modal.data);
+  const authCtx = useContext(AuthContext);
   const dispatch = useDispatch();
+  const isLoggedIn = authCtx.isLoggedIn;
+
+  const favoritesData = useSelector((state) => state.favorite.favorites);
+  const isFavorite = favoritesData.find(
+    (item) => item === parseInt(data.animal_id)
+  );
 
   const closeModalHandler = () => {
     dispatch(modalActions.hideModal());
+  };
+
+  const addFavoriteItemHandler = (item) => {
+    const userId = authCtx.userId;
+    dispatch(addFavoriteItem({ userId, animalData: item }));
+  };
+
+  const removeFavoriteItemHandler = (id) => {
+    const userId = authCtx.userId;
+    dispatch(removeFavoriteItem({ userId, id }));
   };
 
   return (
@@ -53,9 +72,28 @@ const ShowAnimal = () => {
               <Button variant="secondary" onClick={closeModalHandler}>
                 再多看看
               </Button>
-              <Button variant="warning" onClick={closeModalHandler}>
-                加入最愛
-              </Button>
+              {!isFavorite && (
+                <Button
+                  variant="warning"
+                  onClick={() => {
+                    addFavoriteItemHandler(data);
+                  }}
+                  disabled={!isLoggedIn}
+                >
+                  加入最愛
+                </Button>
+              )}
+              {isLoggedIn && isFavorite && (
+                <Button
+                  variant="danger"
+                  onClick={() => {
+                    removeFavoriteItemHandler(data.animal_id);
+                  }}
+                  disabled={!isLoggedIn}
+                >
+                  移除最愛
+                </Button>
+              )}
             </Modal.Footer>
           </Col>
         </Row>

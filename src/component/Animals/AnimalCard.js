@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import homepageCards from "../../data/homepageCards.json";
@@ -7,18 +7,34 @@ import { modalActions } from "../../store/modalSlice";
 import "./AnimalCard.css";
 import catImage from "../../assets/cats-small.jpg";
 import dogImage from "../../assets/dogs-small.jpg";
+import AuthContext from "../../store/AuthContext";
 
 const AnimalCard = () => {
   const location = useLocation();
   const dispatch = useDispatch();
+  const authCtx = useContext(AuthContext);
+  const userId = authCtx.userId;
+  const expirationTime = localStorage.getItem("expirationTime");
   const stateData = useSelector((state) => state.animal.data);
+  const stateShowData = useSelector((state) => state.animal.showData);
+  const stateFavoriteData = useSelector((state) => state.favorite.favorites);
 
-  if (stateData.length === 0) {
-    dispatch(fetchAnimalData());
+  if (!expirationTime || stateData.length === 0) {
+    dispatch(fetchAnimalData(userId));
   }
 
-  const stateShowData = useSelector((state) => state.animal.showData);
-  const animalData = location.pathname === "/" ? homepageCards : stateShowData;
+  let animalData;
+
+  if (location.pathname === "/") {
+    animalData = homepageCards;
+  } else if (location.pathname === "/animals/favorites") {
+    const favoritesData = stateFavoriteData.map((favorite) =>
+      stateData.find((item) => item.animal_id === favorite)
+    );
+    animalData = favoritesData;
+  } else {
+    animalData = stateShowData;
+  }
 
   const showModalHandler = (item) => {
     dispatch(modalActions.showModal(item));

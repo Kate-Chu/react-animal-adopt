@@ -10,6 +10,7 @@ const Auth = () => {
   const [isLoading, setIsLoading] = useState(false);
   const authCtx = useContext(AuthContext);
   const navigate = useNavigate();
+  const googleApi = process.env.REACT_APP_GOOGLE_API;
 
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
@@ -22,16 +23,18 @@ const Auth = () => {
     event.preventDefault();
     const emailInput = emailInputRef.current.value;
     const passwordInput = passwordInputRef.current.value;
+    localStorage.setItem(
+      "userId",
+      emailInput.slice(0, emailInput.indexOf("@"))
+    );
 
     setIsLoading(true);
 
     let url;
     if (hasAccount) {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDkgp2CGJkhyNzuF3WebKJvyjudjDu0aac";
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${googleApi}`;
     } else {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDkgp2CGJkhyNzuF3WebKJvyjudjDu0aac";
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${googleApi}`;
     }
 
     fetch(url, {

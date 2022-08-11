@@ -1,3 +1,4 @@
+import React from "react";
 import "./Favorites.css";
 import AnimalCard from "../component/Animals/AnimalCard";
 
@@ -11,4 +12,4 @@ const Favorites = () => {
   );
 };
 
-export default Favorites;
+export default React.memo(Favorites);

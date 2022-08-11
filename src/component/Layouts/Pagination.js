@@ -20,7 +20,7 @@ const PaginationRender = () => {
 
   const changePageHandler = (number) => {
     dispatch(animalActions.changeShowDataByPage(number));
-    navigate(`/animals?page=${number}`);
+    navigate(`/animals?page=${number}`, { replace: true });
   };
 
   for (let number = start; number <= end; number++) {
