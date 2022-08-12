@@ -2,15 +2,17 @@ import { Grid } from "react-loader-spinner";
 
 const Spinner = () => {
   return (
-    <Grid
-      height="200"
-      width="200"
-      radius="10"
-      color="#e29d49"
-      ariaLabel="three-dots-loading"
-      wrapperStyle
-      wrapperClass
-    />
+    <div className="mt-5 pt-5">
+      <Grid
+        height="200"
+        width="200"
+        radius="10"
+        color="#e29d49"
+        ariaLabel="three-dots-loading"
+        wrapperStyle
+        wrapperClass
+      />
+    </div>
   );
 };
 
