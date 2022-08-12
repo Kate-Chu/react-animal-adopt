@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-animal-adopt/static/css/main.98baf529.css",
-    "main.js": "/react-animal-adopt/static/js/main.cc5f47dd.js",
+    "main.js": "/react-animal-adopt/static/js/main.1ecb4f25.js",
     "static/css/306.b1f2b26f.chunk.css": "/react-animal-adopt/static/css/306.b1f2b26f.chunk.css",
-    "static/js/306.e30eb771.chunk.js": "/react-animal-adopt/static/js/306.e30eb771.chunk.js",
+    "static/js/306.0711b49f.chunk.js": "/react-animal-adopt/static/js/306.0711b49f.chunk.js",
     "static/css/521.e4d557dc.chunk.css": "/react-animal-adopt/static/css/521.e4d557dc.chunk.css",
-    "static/js/521.61de5f51.chunk.js": "/react-animal-adopt/static/js/521.61de5f51.chunk.js",
+    "static/js/521.e8199173.chunk.js": "/react-animal-adopt/static/js/521.e8199173.chunk.js",
     "static/css/476.1a02dc11.chunk.css": "/react-animal-adopt/static/css/476.1a02dc11.chunk.css",
-    "static/js/476.43377c80.chunk.js": "/react-animal-adopt/static/js/476.43377c80.chunk.js",
+    "static/js/476.69060de7.chunk.js": "/react-animal-adopt/static/js/476.69060de7.chunk.js",
     "static/css/994.cc544a0f.chunk.css": "/react-animal-adopt/static/css/994.cc544a0f.chunk.css",
     "static/js/994.b9e24782.chunk.js": "/react-animal-adopt/static/js/994.b9e24782.chunk.js",
     "static/js/926.9e62094e.chunk.js": "/react-animal-adopt/static/js/926.9e62094e.chunk.js",
@@ -16,19 +16,19 @@
     "static/media/cats-small.jpg": "/react-animal-adopt/static/media/cats-small.1db8beee5414f77c1e92.jpg",
     "index.html": "/react-animal-adopt/index.html",
     "main.98baf529.css.map": "/react-animal-adopt/static/css/main.98baf529.css.map",
-    "main.cc5f47dd.js.map": "/react-animal-adopt/static/js/main.cc5f47dd.js.map",
+    "main.1ecb4f25.js.map": "/react-animal-adopt/static/js/main.1ecb4f25.js.map",
     "306.b1f2b26f.chunk.css.map": "/react-animal-adopt/static/css/306.b1f2b26f.chunk.css.map",
-    "306.e30eb771.chunk.js.map": "/react-animal-adopt/static/js/306.e30eb771.chunk.js.map",
+    "306.0711b49f.chunk.js.map": "/react-animal-adopt/static/js/306.0711b49f.chunk.js.map",
     "521.e4d557dc.chunk.css.map": "/react-animal-adopt/static/css/521.e4d557dc.chunk.css.map",
-    "521.61de5f51.chunk.js.map": "/react-animal-adopt/static/js/521.61de5f51.chunk.js.map",
+    "521.e8199173.chunk.js.map": "/react-animal-adopt/static/js/521.e8199173.chunk.js.map",
     "476.1a02dc11.chunk.css.map": "/react-animal-adopt/static/css/476.1a02dc11.chunk.css.map",
-    "476.43377c80.chunk.js.map": "/react-animal-adopt/static/js/476.43377c80.chunk.js.map",
+    "476.69060de7.chunk.js.map": "/react-animal-adopt/static/js/476.69060de7.chunk.js.map",
     "994.cc544a0f.chunk.css.map": "/react-animal-adopt/static/css/994.cc544a0f.chunk.css.map",
     "994.b9e24782.chunk.js.map": "/react-animal-adopt/static/js/994.b9e24782.chunk.js.map",
     "926.9e62094e.chunk.js.map": "/react-animal-adopt/static/js/926.9e62094e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.98baf529.css",
-    "static/js/main.cc5f47dd.js"
+    "static/js/main.1ecb4f25.js"
   ]
 }
