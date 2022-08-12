@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import homepageCards from "../../data/homepageCards.json";
@@ -9,20 +9,20 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./AnimalCard.css";
 import catImage from "../../assets/cats-small.jpg";
 import dogImage from "../../assets/dogs-small.jpg";
-import AuthContext from "../../store/AuthContext";
+import backupData from "../../data/backupData.json";
 
 const AnimalCard = () => {
   const location = useLocation();
   const dispatch = useDispatch();
-  const authCtx = useContext(AuthContext);
-  const userId = authCtx.userId;
   const expirationTime = localStorage.getItem("expirationTime");
   const stateData = useSelector((state) => state.animal.data);
   const stateShowData = useSelector((state) => state.animal.showData);
   const stateFavoriteData = useSelector((state) => state.favorite.favorites);
 
+  console.log("animal card stateData", stateData);
+
   if (!expirationTime || stateData.length === 0) {
-    dispatch(fetchAnimalData(userId));
+    dispatch(fetchAnimalData());
   }
 
   let animalData;

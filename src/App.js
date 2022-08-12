@@ -1,5 +1,5 @@
 import React, { useContext, Suspense } from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./component/Layouts/Header";
@@ -18,33 +18,28 @@ function App() {
 
   return (
     <>
-      <Router>
-        <ShowAnimal />
-        <Header />
-        <main>
-          <Suspense
-            fallback={
-              <div className="d-flex justify-content-center">
-                <Spinner />
-              </div>
-            }
-          >
-            <Routes>
-              <Route path="/" element={<Homepage />}></Route>
-              <Route path="/animals" element={<Animals />}></Route>
-              {authCtx.isLoggedIn && (
-                <Route
-                  path="/animals/favorites"
-                  element={<Favorites />}
-                ></Route>
-              )}
-              <Route path="/auth" element={<Auth />}></Route>
-              <Route path="/*" element={<Auth />}></Route>
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-      </Router>
+      <ShowAnimal />
+      <Header />
+      <main>
+        <Suspense
+          fallback={
+            <div className="d-flex justify-content-center">
+              <Spinner />
+            </div>
+          }
+        >
+          <Routes>
+            <Route path="/" element={<Homepage />}></Route>
+            <Route path="/animals" element={<Animals />}></Route>
+            {authCtx.isLoggedIn && (
+              <Route path="/animals/favorites" element={<Favorites />}></Route>
+            )}
+            <Route path="/auth" element={<Auth />}></Route>
+            <Route path="/*" element={<Auth />}></Route>
+          </Routes>
+        </Suspense>
+      </main>
+      <Footer />
     </>
   );
 }

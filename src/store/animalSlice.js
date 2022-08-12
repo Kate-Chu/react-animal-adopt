@@ -80,13 +80,13 @@ const animalSlice = createSlice({
       state.showData = animalData.slice(0, 15);
     },
 
-    [fetchAnimalData.pending]: (state, action) => {
-      state.isLoading = true;
-    },
+    // [fetchAnimalData.pending]: (state, action) => {
+    //   state.isLoading = true;
+    // },
 
-    [fetchAnimalData.rejected]: (state, action) => {
-      state.isLoading = false;
-    },
+    // [fetchAnimalData.rejected]: (state, action) => {
+    //   state.isLoading = false;
+    // },
   },
 });
 
