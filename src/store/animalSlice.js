@@ -74,10 +74,10 @@ const animalSlice = createSlice({
     [fetchAnimalData.fulfilled]: (state, action) => {
       const animalData = action.payload;
       localStorage.setItem("animal_data", JSON.stringify(animalData));
-      state.isLoading = false;
       state.data = animalData;
       state.length = animalData.length;
       state.showData = animalData.slice(0, 15);
+      state.isLoading = false;
     },
 
     // [fetchAnimalData.pending]: (state, action) => {

@@ -19,8 +19,6 @@ const AnimalCard = () => {
   const stateShowData = useSelector((state) => state.animal.showData);
   const stateFavoriteData = useSelector((state) => state.favorite.favorites);
 
-  console.log("animal card stateData", stateData);
-
   if (!expirationTime || stateData.length === 0) {
     dispatch(fetchAnimalData());
   }
