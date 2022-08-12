@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-const URL =
-  "https://react-animal-adopt-default-rtdb.asia-southeast1.firebasedatabase.app";
+// const URL =
+// "https://react-animal-adopt-default-rtdb.asia-southeast1.firebasedatabase.app";
+const URL = process.env.REACT_APP_FIREBASE_DB_URL;
 
 export const fetchFavoriteItem = createAsyncThunk(
   "favorite_slice/fetchFavoriteItem",
