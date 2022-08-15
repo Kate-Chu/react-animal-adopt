@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+## 介紹
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+使用 React 打造的動物認領養 App，<br>
+即時取得全台動物收容所資料 API，查看所有待領養動物。<br>
+可申請個人帳戶並將指定動物存入最愛清單，並存入 Firebase 資料庫。
 
-## Available Scripts
+## 圖片範例
 
-In the project directory, you can run:
+### Landing Page
 
-### `npm start`
+![image](https://github.com/Kate-Chu/react-animal-adopt/blob/main/src/assets/landing-page.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 待領養動物頁面
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](https://github.com/Kate-Chu/react-animal-adopt/blob/main/src/assets/animals.png)
 
-### `npm test`
+### 待領養動物詳細資料
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://github.com/Kate-Chu/react-animal-adopt/blob/main/src/assets/animal-modal.png)
 
-### `npm run build`
+## Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> https://kate-chu.github.io/react-animal-adopt/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 測試帳號
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+帳號 user@example.com
+密碼 12345678
+```
 
-### `npm run eject`
+## 開發工具
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. bootstrap v5.1.3
+2. gh-pages v4.0.0
+3. react v18.2.0
+4. react-bootstrap v2.5.0
+5. react-dom v18.2.0
+6. react-loader-spinner v5.1.7-beta.1
+7. react-redux v8.0.2
+8. react-scripts 5.0.1
+9. redux v4.2.0
+10. web-vitals v2.1.4
+11. dotenv-webpack v8.0.0
