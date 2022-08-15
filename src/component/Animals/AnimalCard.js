@@ -9,7 +9,6 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./AnimalCard.css";
 import catImage from "../../assets/cats-small.jpg";
 import dogImage from "../../assets/dogs-small.jpg";
-import backupData from "../../data/backupData.json";
 
 const AnimalCard = () => {
   const location = useLocation();

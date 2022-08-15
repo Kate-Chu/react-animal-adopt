@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import BallTriangleSpinner from "../component/UI/Spinner";
+import Spinner from "../component/UI/Spinner";
 import "./Animals.css";
 import SelectForm from "../component/Animals/SelectForm";
 import SearchForm from "../component/Animals/SearchForm";
@@ -17,7 +17,7 @@ const Animals = () => {
             <h1 className="waiting-words my-5 py-5 text-secondary">
               努力加載中，馬上就好了...
             </h1>
-            <BallTriangleSpinner />
+            <Spinner />
           </div>
         )}
         {!isLoading && (

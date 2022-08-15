@@ -80,13 +80,18 @@ const animalSlice = createSlice({
       state.isLoading = false;
     },
 
-    // [fetchAnimalData.pending]: (state, action) => {
-    //   state.isLoading = true;
-    // },
+    [fetchAnimalData.pending]: (state, action) => {
+      state.isLoading = true;
+    },
 
-    // [fetchAnimalData.rejected]: (state, action) => {
-    //   state.isLoading = false;
-    // },
+    [fetchAnimalData.rejected]: (state, action) => {
+      const animalData = action.payload;
+      localStorage.setItem("animal_data", JSON.stringify(animalData));
+      state.data = backupData;
+      state.length = backupData.length;
+      state.showData = backupData.slice(0, 15);
+      state.isLoading = false;
+    },
   },
 });
 
