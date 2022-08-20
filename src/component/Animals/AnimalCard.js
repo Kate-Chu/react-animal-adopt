@@ -7,8 +7,7 @@ import { modalActions } from "../../store/modalSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./AnimalCard.css";
-import catImage from "../../assets/cats-small.jpg";
-import dogImage from "../../assets/dogs-small.jpg";
+import animeImage from "../../assets/anime-dogs.jpg";
 
 const AnimalCard = () => {
   const location = useLocation();
@@ -42,10 +41,8 @@ const AnimalCard = () => {
   const cards = animalData.map((item) => {
     let image;
 
-    if (!item.album_file && item.animal_kind === "狗") {
-      image = dogImage;
-    } else if (!item.album_file && item.animal_kind === "貓") {
-      image = catImage;
+    if (!item.album_file) {
+      image = animeImage;
     } else {
       image = item.album_file;
     }
