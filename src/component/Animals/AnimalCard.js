@@ -7,12 +7,12 @@ import { modalActions } from "../../store/modalSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./AnimalCard.css";
-import animeImage from "../../assets/anime-dogs.jpg";
+import illusDogs from "../../assets/illus-dogs.jpg";
+import illusCats from "../../assets/illus-cats.jpg";
 
 const AnimalCard = () => {
   const location = useLocation();
   const dispatch = useDispatch();
-  // const expirationTime = localStorage.getItem("expirationTime");
   const stateData = useSelector((state) => state.animal.data);
   const stateShowData = useSelector((state) => state.animal.showData);
   const stateFavoriteData = useSelector((state) => state.favorite.favorites);
@@ -41,8 +41,10 @@ const AnimalCard = () => {
   const cards = animalData.map((item) => {
     let image;
 
-    if (!item.album_file) {
-      image = animeImage;
+    if (!item.album_file && item.animal_kind === "狗") {
+      image = illusDogs;
+    } else if (!item.album_file && item.animal_kind === "貓") {
+      image = illusCats;
     } else {
       image = item.album_file;
     }

@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { animalActions } from "../../store/animalSlice";
 
@@ -6,7 +5,6 @@ import Pagination from "react-bootstrap/Pagination";
 import "./Pagination.css";
 
 const PaginationRender = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const stateAnimalLength = useSelector((state) => state.animal.length);
   const currentPage = useSelector((state) => state.animal.currentPage);

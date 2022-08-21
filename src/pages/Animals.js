@@ -20,7 +20,7 @@ const Animals = () => {
         )}
         {!isLoading && (
           <>
-            <section className="row search-section d-flex justify-content-around align-items-center">
+            <section className="row search-section d-flex justify-content-around align-items-center mt-5">
               <div className="col-lg-3">
                 <SelectForm />
               </div>
