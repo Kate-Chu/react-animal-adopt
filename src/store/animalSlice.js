@@ -72,12 +72,12 @@ const animalSlice = createSlice({
 
   extraReducers: {
     [fetchAnimalData.fulfilled]: (state, action) => {
+      state.isLoading = false;
       const animalData = action.payload;
       localStorage.setItem("animal_data", JSON.stringify(animalData));
       state.data = animalData;
       state.length = animalData.length;
       state.showData = animalData.slice(0, 15);
-      state.isLoading = false;
     },
 
     [fetchAnimalData.pending]: (state, action) => {

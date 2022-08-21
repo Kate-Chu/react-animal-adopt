@@ -8,21 +8,19 @@ import AnimalCard from "../component/Animals/AnimalCard";
 
 const Animals = () => {
   const isLoading = useSelector((state) => state.animal.isLoading);
+  console.log(isLoading);
 
   return (
     <>
       <section className="container animals-section">
         {isLoading && (
           <div className="d-flex align-items-center flex-column h-100">
-            <h1 className="waiting-words my-5 py-5 text-secondary">
-              努力加載中，馬上就好了...
-            </h1>
             <Spinner />
           </div>
         )}
         {!isLoading && (
           <>
-            <section className="row mt-5 search-section  d-flex justify-content-around align-items-center">
+            <section className="row search-section d-flex justify-content-around align-items-center">
               <div className="col-lg-3">
                 <SelectForm />
               </div>

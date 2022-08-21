@@ -12,12 +12,12 @@ import animeImage from "../../assets/anime-dogs.jpg";
 const AnimalCard = () => {
   const location = useLocation();
   const dispatch = useDispatch();
-  const expirationTime = localStorage.getItem("expirationTime");
+  // const expirationTime = localStorage.getItem("expirationTime");
   const stateData = useSelector((state) => state.animal.data);
   const stateShowData = useSelector((state) => state.animal.showData);
   const stateFavoriteData = useSelector((state) => state.favorite.favorites);
 
-  if (!expirationTime || stateData.length === 0) {
+  if (stateData.length === 0) {
     dispatch(fetchAnimalData());
   }
 
