@@ -8,7 +8,6 @@ import AnimalCard from "../component/Animals/AnimalCard";
 
 const Animals = () => {
   const isLoading = useSelector((state) => state.animal.isLoading);
-  console.log(isLoading);
 
   return (
     <>

@@ -7,6 +7,7 @@ import "./index.css";
 import App from "./App";
 import store from "./store/index";
 import { AuthContextProvider } from "./store/AuthContext";
+import ScrollToTop from "./component/Layouts/ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,6 +15,7 @@ root.render(
     <Provider store={store}>
       <AuthContextProvider>
         <Router>
+          <ScrollToTop />
           <App />
         </Router>
       </AuthContextProvider>
