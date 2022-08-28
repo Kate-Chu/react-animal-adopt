@@ -25,13 +25,10 @@ const Header = React.memo(() => {
   };
 
   const reloadHandler = () => {
-    if (
-      (stateData.length && !stateData[0] !== stateShowData[0]) ||
-      stateData.length
-    ) {
+    if ((stateData && !stateData[0] !== stateShowData[0]) || stateData.length) {
       dispatch(animalActions.changeShowDataByPage(1));
     } else {
-      window.location.reload();
+      window.location.reload(false);
     }
   };
 
