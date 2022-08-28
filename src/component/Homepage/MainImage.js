@@ -1,12 +1,12 @@
 import React from "react";
-import classes from "./MainImage.module.css";
+import "./MainImage.css";
 
 import dogsImg from "../../assets/dogs-small.jpg";
 
 const MainImage = () => {
   return (
     <>
-      <img src={dogsImg} className={classes.mainImage} alt="dogsImg" />
+      <img src={dogsImg} className="mainImage" alt="dogsImg" />
     </>
   );
 };
