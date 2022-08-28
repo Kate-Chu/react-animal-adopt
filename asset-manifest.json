@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-animal-adopt/static/css/main.c84c8f71.css",
-    "main.js": "/react-animal-adopt/static/js/main.5ab9082f.js",
+    "main.js": "/react-animal-adopt/static/js/main.b9562451.js",
     "static/css/22.b6f55484.chunk.css": "/react-animal-adopt/static/css/22.b6f55484.chunk.css",
     "static/js/22.a145721d.chunk.js": "/react-animal-adopt/static/js/22.a145721d.chunk.js",
     "static/css/306.a6060208.chunk.css": "/react-animal-adopt/static/css/306.a6060208.chunk.css",
@@ -18,7 +18,7 @@
     "static/media/illus-dogs.jpg": "/react-animal-adopt/static/media/illus-dogs.7018504bdb0f774ef6c1.jpg",
     "index.html": "/react-animal-adopt/index.html",
     "main.c84c8f71.css.map": "/react-animal-adopt/static/css/main.c84c8f71.css.map",
-    "main.5ab9082f.js.map": "/react-animal-adopt/static/js/main.5ab9082f.js.map",
+    "main.b9562451.js.map": "/react-animal-adopt/static/js/main.b9562451.js.map",
     "22.b6f55484.chunk.css.map": "/react-animal-adopt/static/css/22.b6f55484.chunk.css.map",
     "22.a145721d.chunk.js.map": "/react-animal-adopt/static/js/22.a145721d.chunk.js.map",
     "306.a6060208.chunk.css.map": "/react-animal-adopt/static/css/306.a6060208.chunk.css.map",
@@ -31,6 +31,6 @@
   },
   "entrypoints": [
     "static/css/main.c84c8f71.css",
-    "static/js/main.5ab9082f.js"
+    "static/js/main.b9562451.js"
   ]
 }
