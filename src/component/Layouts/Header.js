@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import AuthContext from "../../store/AuthContext";
+import { animalActions } from "../../store/animalSlice";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -10,18 +12,27 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import "./Header.css";
 
 const Header = React.memo(() => {
-  const navigation = useNavigate();
-  const location = useLocation;
+  const navigate = useNavigate();
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
+  const stateData = useSelector((state) => state.animal.data);
+  const stateShowData = useSelector((state) => state.animal.showData);
+  const dispatch = useDispatch();
 
   const logoutHandler = () => {
     authCtx.logoutHandler();
-    navigation("/", { replace: true });
+    navigate("/", { replace: true });
   };
 
   const reloadHandler = () => {
-    location.reload();
+    if (
+      (stateData.length && !stateData[0] !== stateShowData[0]) ||
+      stateData.length
+    ) {
+      dispatch(animalActions.changeShowDataByPage(1));
+    } else {
+      window.location.reload();
+    }
   };
 
   return (
