@@ -80,7 +80,12 @@ const Header = React.memo(() => {
                 </Nav>
               ) : (
                 <Nav className="me-auto">
-                  <Nav.Link as={Link} to="/auth" onClick={logoutHandler}>
+                  <Nav.Link
+                    as={Link}
+                    to="/auth"
+                    className="main-header__body__nav-link"
+                    onClick={logoutHandler}
+                  >
                     Logout
                   </Nav.Link>
                 </Nav>
