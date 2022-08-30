@@ -30,7 +30,6 @@ const cities = [
 ];
 
 const SelectForm = () => {
-  // const inputRef = useRef();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
